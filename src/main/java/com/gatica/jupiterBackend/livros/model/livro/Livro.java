@@ -33,6 +33,7 @@ public class Livro {
 
     public Livro(String path) throws IOException {
         this.pdfUtils = new PdfUtils(path);
+        this.capa = pdfUtils.gerarCapa();
 
 
 
