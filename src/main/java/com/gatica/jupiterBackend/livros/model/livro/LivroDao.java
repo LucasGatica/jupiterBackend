@@ -22,9 +22,7 @@ public class LivroDao {
 
         try {
             PdfUtils pdfUtils = new PdfUtils(path);
-
             this.posicaoAtual = 0;
-
             this.titulo = pdfUtils.gerarTitulo();
             this.autor = pdfUtils.gerarAutor();
             this.quantidadePaginas = pdfUtils.gerarQuantidadePaginas();
@@ -32,7 +30,6 @@ public class LivroDao {
             this.capa = pdfUtils.gerarCapa();
             this.texto = pdfUtils.gerarTexto();
             this.tamanhoPosicao = texto.length;
-
         }catch (Exception ignored){
         }
     }

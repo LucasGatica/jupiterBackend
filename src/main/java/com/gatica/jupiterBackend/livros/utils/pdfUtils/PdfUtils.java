@@ -1,7 +1,5 @@
 package com.gatica.jupiterBackend.livros.utils.pdfUtils;
 
-import com.gatica.jupiterBackend.livros.model.livro.Livro;
-import lombok.AllArgsConstructor;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.ImageType;
 import org.apache.pdfbox.rendering.PDFRenderer;
@@ -67,12 +65,10 @@ public class PdfUtils {
          return removeEspaco(texto);
     }
 
-    public int gerarTamanhoPosicao() {
-        return 1;
-    }
-
     private String[] removeEspaco(String palavra){
-        return palavra.split(" ");
+        String palavrae = palavra.replace("\n"," ");
+        String palavraSemEspaco = palavrae.replace("  "," ");
+        return palavraSemEspaco.split(" ");
     }
 
 }

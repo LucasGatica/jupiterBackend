@@ -1,6 +1,5 @@
 package com.gatica.jupiterBackend.livros.model.livro;
 
-import com.gatica.jupiterBackend.livros.utils.pdfUtils.PdfUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,11 +18,21 @@ public class Livro {
     private String capa;
     private String autor;
     private String titulo;
-    private String texto;
+    private String[] texto;
     private String keyWords;
     private int posicaoAtual;
     private int quantidadePaginas;
     private int tamanhoPosicao;
 
+    public Livro(String capa, String autor, String titulo, String[] texto, int posicaoAtual, String keyWords, int quantidadePaginas, int tamanhoPosicao) {
+        this.capa = capa;
+        this.autor = autor;
+        this.titulo = titulo;
+        this.texto = texto;
+        this.posicaoAtual = posicaoAtual;
+        this.keyWords = keyWords;
+        this.quantidadePaginas = quantidadePaginas;
+        this.tamanhoPosicao = tamanhoPosicao;
+    }
 
 }
