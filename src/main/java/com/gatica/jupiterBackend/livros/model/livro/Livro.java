@@ -8,15 +8,12 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.IOException;
-
 @Document
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Livro {
-
     @Id
     private String id;
     private String capa;
@@ -28,14 +25,5 @@ public class Livro {
     private int quantidadePaginas;
     private int tamanhoPosicao;
 
-    private PdfUtils pdfUtils;
 
-
-    public Livro(String path) throws IOException {
-        this.pdfUtils = new PdfUtils(path);
-        this.capa = pdfUtils.gerarCapa();
-
-
-
-    }
 }
