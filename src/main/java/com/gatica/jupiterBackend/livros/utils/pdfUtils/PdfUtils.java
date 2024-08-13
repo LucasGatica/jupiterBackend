@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Base64;
 
 public class PdfUtils {
@@ -25,7 +26,7 @@ public class PdfUtils {
     }
 
     public String gerarCapa() throws IOException {
-        BufferedImage bim = pdfRenderer.renderImageWithDPI(0, 30, ImageType.RGB);
+        BufferedImage bim = pdfRenderer.renderImageWithDPI(0, 25, ImageType.RGB);
 
         return gerarBase64(bim);
     }
@@ -65,10 +66,13 @@ public class PdfUtils {
          return removeEspaco(texto);
     }
 
-    private String[] removeEspaco(String palavra){
-        String palavrae = palavra.replace("\n"," ");
-        String palavraSemEspaco = palavrae.replace("  "," ");
-        return palavraSemEspaco.split(" ");
+    private String[] removeEspaco(String palavra) {
+        String palavrae = palavra.replace("\n", " ");
+        String palavraSemEspaco = palavrae.replace("  ", " ");
+        return Arrays.stream(palavraSemEspaco.split(" "))
+                .filter(s -> !s.isEmpty())
+                .toArray(String[]::new);
     }
+
 
 }
