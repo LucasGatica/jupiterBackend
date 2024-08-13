@@ -75,4 +75,7 @@ public class PdfUtils {
     }
 
 
+    public void fecharPdf() throws IOException {
+        pdDocument.close();
+    }
 }

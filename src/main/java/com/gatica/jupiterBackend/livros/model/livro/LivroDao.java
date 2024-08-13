@@ -30,6 +30,7 @@ public class LivroDao {
             this.capa = pdfUtils.gerarCapa();
             this.texto = pdfUtils.gerarTexto();
             this.tamanhoPosicao = texto.length;
+            pdfUtils.fecharPdf();
         }catch (Exception ignored){
         }
     }
